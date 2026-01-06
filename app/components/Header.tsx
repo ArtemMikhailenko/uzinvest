@@ -6,16 +6,26 @@ export default function Header() {
   const [exchangeRate, setExchangeRate] = useState(12850);
 
   useEffect(() => {
-    // Симуляция получения курса валют
-    const updateRate = () => {
-      // Реальный курс UZS/USD колеблется около 12,800-12,900
-      const baseRate = 12850;
-      const fluctuation = Math.random() * 100 - 50; // +/- 50
-      setExchangeRate(Math.round(baseRate + fluctuation));
+    // Получение реального курса валют
+    const fetchExchangeRate = async () => {
+      try {
+        // Используем API для получения реального курса UZS/USD
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        
+        if (data && data.rates && data.rates.UZS) {
+          setExchangeRate(Math.round(data.rates.UZS));
+        }
+      } catch (error) {
+        console.error('Ошибка получения курса валют:', error);
+        // Если API недоступен, используем примерный курс
+        setExchangeRate(12850);
+      }
     };
 
-    updateRate();
-    const interval = setInterval(updateRate, 30000); // Обновление каждые 30 секунд
+    fetchExchangeRate();
+    // Обновление каждые 5 минут
+    const interval = setInterval(fetchExchangeRate, 300000);
 
     return () => clearInterval(interval);
   }, []);

@@ -11,7 +11,7 @@ export default function Projects() {
       profit: '+12.4%',
       profitChange: '+2.8% за месяц',
       isProfitable: true,
-      image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&h=600&fit=crop',
+      image: '/images/projects/1.jpg',
       imageAlt: 'Карьер НГМК с тяжелой техникой'
     },
     {
@@ -23,7 +23,7 @@ export default function Projects() {
       profit: '+8.7%',
       profitChange: '+1.2% за месяц',
       isProfitable: true,
-      image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&h=600&fit=crop',
+      image: '/images/projects/2.jpg',
       imageAlt: 'Металлургический завод АГМК'
     },
     {
@@ -35,7 +35,7 @@ export default function Projects() {
       profit: '+15.2%',
       profitChange: '+3.4% за месяц',
       isProfitable: true,
-      image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=1200&h=600&fit=crop',
+      image: '/images/projects/3.jpg',
       imageAlt: 'Здание Национального банка Узбекистана'
     },
     {
@@ -47,20 +47,8 @@ export default function Projects() {
       profit: '+9.3%',
       profitChange: '+1.8% за месяц',
       isProfitable: true,
-      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1200&h=600&fit=crop',
+      image: '/images/projects/4.jpg',
       imageAlt: 'Нефтяные качалки на закате'
-    },
-    {
-      id: 5,
-      category: 'Химическая промышленность',
-      categoryColor: 'bg-purple-600',
-      title: 'Навоиазот',
-      description: 'Ведущее предприятие по производству минеральных удобрений и химической продукции, обеспечивающее сельское хозяйство региона.',
-      profit: '+11.6%',
-      profitChange: '+2.3% за месяц',
-      isProfitable: true,
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&h=600&fit=crop',
-      imageAlt: 'Химическое производство Навоиазот'
     }
   ];
 
@@ -78,18 +66,16 @@ export default function Projects() {
         </div>
 
         {/* Список проектов */}
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`group relative overflow-hidden rounded-3xl h-[400px] ${
-                index < 2 ? 'h-[500px]' : 'h-[400px]'
-              }`}
+              className="group relative overflow-hidden rounded-2xl md:rounded-3xl h-auto min-h-[270px] shadow-2xl cursor-pointer"
             >
               {/* Фоновое изображение */}
               <div className="absolute inset-0">
                 <div 
-                  className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
                   style={{
                     backgroundImage: `url(${project.image})`,
                   }}
@@ -99,25 +85,25 @@ export default function Projects() {
               </div>
 
               {/* Контент */}
-              <div className="relative h-full flex flex-col p-8 md:p-12">
+              <div className="relative h-full flex flex-col p-5 md:p-8 items-center">
                 {/* Тег категории */}
                 <div className="mb-auto">
-                  <span className={`inline-block px-5 py-2 ${project.categoryColor} text-white text-sm font-semibold rounded-full shadow-lg`}>
+                  <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 ${project.categoryColor} text-white text-xs md:text-sm font-semibold rounded-full shadow-lg`}>
                     {project.category}
                   </span>
                 </div>
 
                 {/* Нижняя часть */}
-                <div className="max-w-2xl mt-auto">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                <div className="mt-auto">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-white/90 text-lg mb-4 leading-relaxed">
+                  <p className="text-white/90 text-sm md:text-base mb-3 md:mb-4 leading-relaxed line-clamp-2 md:line-clamp-3">
                     {project.description}
                   </p>
 
-                  {/* Прибыльность */}
-                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                  {/* Прибыльность - только на десктопе */}
+                  <div className="hidden md:flex flex-wrap items-center gap-4 mb-6">
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-2.5 border border-white/20">
                       <p className="text-xs text-white/70 mb-0.5">Доходность</p>
                       <p className={`text-xl font-bold ${project.isProfitable ? 'text-[#1EB53A]' : 'text-[#CE1126]'}`}>
@@ -133,11 +119,8 @@ export default function Projects() {
                   </div>
 
                   {/* Кнопка */}
-                  <button className="px-7 py-3 bg-[#1EB53A] text-white text-base font-semibold rounded-xl hover:bg-[#17A130] transform hover:scale-105 transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-2">
+                  <button className="w-full md:w-auto px-6 py-2.5 md:px-8 md:py-3 bg-yellow-400 text-black text-sm md:text-base font-bold rounded-xl hover:bg-yellow-300 active:bg-yellow-300 transform hover:scale-105 active:scale-105 transition-all shadow-xl hover:shadow-2xl inline-flex items-center justify-center gap-2">
                     Начать
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
                   </button>
                 </div>
               </div>

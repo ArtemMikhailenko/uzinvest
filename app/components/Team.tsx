@@ -41,26 +41,26 @@ export default function Team() {
   ];
 
   return (
-    <section id="team" className="relative py-24 px-4">
+    <section id="team" className="relative py-16 md:py-24 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Заголовок секции */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-[#1A3A5C] mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1A3A5C] mb-4">
             Наши сотрудники
           </h2>
         </div>
 
         {/* Сетка сотрудников */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-8 md:mb-12">
           {team.map((member) => (
             <div 
               key={member.id}
-              className="group bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/50 hover:shadow-2xl hover:bg-white/90 transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white/80 backdrop-blur-sm rounded-xl md:rounded-3xl overflow-hidden shadow-xl border border-white/50 hover:shadow-2xl hover:bg-white/90 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Фото */}
-              <div className="mb-6 overflow-hidden rounded-2xl">
+              <div className="overflow-hidden">
                 <div 
-                  className="w-full h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-32 md:h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                   style={{
                     backgroundImage: `url(${member.image})`,
                   }}
@@ -68,11 +68,11 @@ export default function Team() {
               </div>
 
               {/* Информация */}
-              <div>
-                <h3 className="text-xl font-bold text-[#1A3A5C] mb-2 leading-tight">
+              <div className="p-3 md:p-6">
+                <h3 className="text-xs md:text-xl font-bold text-[#1A3A5C] mb-1 md:mb-2 leading-tight">
                   {member.name}
                 </h3>
-                <p className="text-[#1A3A5C]/70 text-sm leading-relaxed">
+                <p className="text-[#1A3A5C]/70 text-[10px] md:text-sm leading-relaxed">
                   {member.position}
                 </p>
               </div>

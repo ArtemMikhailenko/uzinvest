@@ -43,37 +43,38 @@ export default function FAQ() {
   };
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden ">
-      <div className="max-w-4xl mx-auto relative z-10">
+    <section id="faq" className="relative py-16 md:py-24 px-4 overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Заголовок */}
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A3A5C] text-center mb-8 md:mb-16">
           Часто задаваемые вопросы
         </h2>
 
         {/* Список вопросов */}
-        <div className="space-y-4">
+        <div className="space-y-3 md:space-y-4 mb-8">
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="bg-[#2A2A2A] rounded-xl overflow-hidden border border-[#3A3A3A] transition-all"
+              className="bg-white/60 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden border border-white/50 shadow-lg transition-all"
             >
               {/* Вопрос */}
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#333333] transition-colors"
+                className="w-full px-4 md:px-6 py-4 md:py-5 flex items-center justify-between text-left hover:bg-white/90 transition-colors gap-3"
               >
-                <div className="flex items-center gap-4 flex-1">
+                <div className="flex items-center gap-3 md:gap-4 flex-1">
+                  
                   {/* Текст вопроса */}
-                  <span className="text-white font-semibold text-lg pr-4">
+                  <span className="text-[#1A3A5C] font-semibold text-sm md:text-lg">
                     {faq.question}
                   </span>
                 </div>
-                {/* Иконка минус */}
+                {/* Иконка плюс/минус */}
                 <div className="flex-shrink-0">
-                  <div className="w-6 h-6 flex items-center justify-center">
+                  <div className="w-6 h-6 md:w-7 md:h-7 flex items-center justify-center">
                     {openId === faq.id ? (
                       <svg
-                        className="w-5 h-5 text-white"
+                        className="w-5 h-5 md:w-6 md:h-6 text-[#1EB53A]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -81,13 +82,13 @@ export default function FAQ() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth={2.5}
+                          strokeWidth={3}
                           d="M20 12H4"
                         />
                       </svg>
                     ) : (
                       <svg
-                        className="w-5 h-5 text-white"
+                        className="w-5 h-5 md:w-6 md:h-6 text-[#1EB53A]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -95,8 +96,8 @@ export default function FAQ() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M20 12H4"
+                          strokeWidth={3}
+                          d="M12 4v16m8-8H4"
                         />
                       </svg>
                     )}
@@ -110,8 +111,8 @@ export default function FAQ() {
                   openId === faq.id ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-6 pt-2">
-                  <div className="text-white/80 leading-relaxed whitespace-pre-line">
+                <div className="px-4 md:px-6 pb-4 md:pb-6 pt-2">
+                  <div className="text-[#1A3A5C]/80 text-sm md:text-base leading-relaxed whitespace-pre-line ">
                     {faq.answer}
                   </div>
                 </div>
@@ -119,9 +120,17 @@ export default function FAQ() {
             </div>
           ))}
         </div>
-      </div>
 
-    
+        {/* Копирайт */}
+        <div className="text-center mt-8 md:mt-12">
+          <p className="text-[#1A3A5C] font-semibold text-base md:text-lg mb-1">
+            © UzInvest, 2026
+          </p>
+          <p className="text-[#1A3A5C]/70 text-sm md:text-base">
+            Все права защищены
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

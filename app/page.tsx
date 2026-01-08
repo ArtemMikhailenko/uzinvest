@@ -19,7 +19,10 @@ export default function Home() {
       <div 
         className="fixed inset-0 -z-10"
         style={{
-          background: 'linear-gradient(180deg, #0077B6 0%, #00B4D8 35%, #0096C7 55%, #17B169 100%)',
+          backgroundImage: 'url(/images/bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'top left',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         {/* Звёзды и полумесяц */}
@@ -40,14 +43,7 @@ export default function Home() {
       <Header />
       <Hero />
       <StockTickers />
-      
       <News />
-      <MobileApp />
-      <AboutUs />
-      <FAQ />
-      <Projects />
-      <Licenses />
-      <Team />
       <Footer />
     </div>
   );

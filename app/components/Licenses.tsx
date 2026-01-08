@@ -66,37 +66,27 @@ export default function Licenses() {
         </div>
 
         {/* Сетка документов */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
           {documents.map((doc) => (
             <div 
               key={doc.id}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl hover:bg-white/90 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl border border-white/20 hover:shadow-2xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center min-h-[140px] md:min-h-[160px]"
             >
-              {/* Иконка */}
-              <div className="w-16 h-16 bg-gradient-to-br from-[#1EB53A] to-[#17A130] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <span className="text-3xl">{doc.icon}</span>
-              </div>
-
               {/* Кнопка Открыть */}
-              <button className="self-start mb-4 px-4 py-1.5 bg-[#1EB53A] text-white text-sm font-semibold rounded-lg hover:bg-[#17A130] transition-colors">
+              <button className="mb-3 md:mb-4 px-4 md:px-6 py-1.5 md:py-2 bg-[#1EB53A] text-white text-xs md:text-sm font-semibold rounded-full hover:bg-[#17A130] transition-colors shadow-lg">
                 Открыть
               </button>
 
               {/* Заголовок */}
-              <h3 className="text-base font-bold text-[#1A3A5C] mb-3 leading-tight min-h-[48px]">
+              <h3 className="text-xs md:text-base font-bold text-white leading-tight">
                 {doc.title}
               </h3>
-
-              {/* Описание */}
-              <p className="text-sm text-[#1A3A5C]/70 leading-relaxed">
-                {doc.description}
-              </p>
             </div>
           ))}
         </div>
 
         {/* Дополнительная информация */}
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 md:p-12 text-center shadow-2xl border border-white/50">
+        {/* <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 md:p-12 text-center shadow-2xl border border-white/50">
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-16 bg-gradient-to-br from-[#0099D8] to-[#1EB53A] rounded-2xl flex items-center justify-center mx-auto mb-6">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +105,7 @@ export default function Licenses() {
               безопасность ваших инвестиций.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -2,25 +2,56 @@
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative flex items-center justify-center px-4" style={{ height: 'calc(50vh - 32px)' }}>
-      <div className="max-w-7xl mx-auto text-center">
+    <section id="hero" className="relative flex items-center justify-center px-4" style={{ height: 'calc(45vh - 32px)' }}>
+      {/* Звезды и полумесяц */}
+      {/* <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-start gap-2 z-10">
+        <div className="text-white text-3xl md:text-4xl">☾</div>
+        <div className="grid grid-cols-4 gap-1 mt-2">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className="text-white text-xs">✦</div>
+          ))}
+        </div>
+      </div> */}
+
+      {/* Красные волнистые линии сверху */}
+      {/* <div className="absolute top-0 left-0 right-0 h-24 overflow-hidden">
+        <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 100">
+          <path d="M0,30 Q150,10 300,30 T600,30 T900,30 T1200,30 L1200,0 L0,0 Z" fill="#CE1126" opacity="0.7"/>
+          <path d="M0,40 Q150,20 300,40 T600,40 T900,40 T1200,40 L1200,0 L0,0 Z" fill="#CE1126" opacity="0.5"/>
+        </svg>
+      </div> */}
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
         {/* Главное число */}
-        <div className="mb-3">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 drop-shadow-2xl">
+        <div className="mb-6">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white drop-shadow-2xl">
             531,479
           </h1>
         </div>
 
         {/* Текст */}
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6 tracking-wide">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-12 tracking-wide drop-shadow-lg">
           НАМ ДОВЕРЯЮТ
         </h2>
 
         {/* Кнопка CTA */}
-        <button className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black text-sm font-bold rounded-full hover:from-yellow-500 hover:to-yellow-600 transform hover:scale-105 transition-all shadow-2xl">
-          Начать инвестировать
+        <button 
+          className="px-12 py-4 bg-[#FFC107] text-black text-lg font-bold rounded-full hover:bg-[#FFB300] transform hover:scale-105 transition-all"
+          style={{
+            boxShadow: '0 10px 40px rgba(255, 193, 7, 0.5), 0 6px 20px rgba(255, 193, 7, 0.3)',
+          }}
+        >
+          Начать
         </button>
       </div>
+
+      {/* Красные волнистые линии снизу */}
+      {/* <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden rotate-180">
+        <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 100">
+          <path d="M0,30 Q150,10 300,30 T600,30 T900,30 T1200,30 L1200,0 L0,0 Z" fill="#CE1126" opacity="0.7"/>
+          <path d="M0,40 Q150,20 300,40 T600,40 T900,40 T1200,40 L1200,0 L0,0 Z" fill="#CE1126" opacity="0.5"/>
+        </svg>
+      </div> */}
     </section>
   );
 }

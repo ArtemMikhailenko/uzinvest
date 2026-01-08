@@ -7,33 +7,37 @@ const stocks = [
     id: 1,
     name: 'Uzbekneftegaz',
     symbol: 'UNG',
-    price: '1 245 800',
+    price: '1 305.83',
     change: -0.01,
-    icon: '🛢️'
+    icon: 'https://www.ung.uz/images/main-logo.svg',
+    link: 'https://www.ung.uz/'
   },
   {
     id: 2,
     name: 'Uztransgaz',
     symbol: 'UTG',
-    price: '856 300',
-    change: -0.07,
-    icon: '⚡'
+    price: '1 072.26',
+    change: -0.05,
+    icon: 'https://utg.uz/local/templates/utg/media/img/logo.svg',
+    link: 'https://utg.uz/en/'
   },
   {
     id: 3,
     name: 'Uzbekenergo',
     symbol: 'UZE',
-    price: '524 900',
-    change: -0.05,
-    icon: '💡'
+    price: '578.60',
+    change: 0.14,
+    icon: 'https://www.uzbekembassy.in/wp-content/uploads/2017/12/unnamed.jpg',
+    link: 'https://www.uzbekembassy.in/uzbekenergo-international-cooperation-is-expanding/'
   },
   {
     id: 4,
-    name: 'Uzinvest',
-    symbol: 'UZI',
-    price: '689 450',
-    change: -0.04,
-    icon: '💰'
+    name: 'Национальный банк',
+    symbol: 'NBU',
+    price: '234.12',
+    change: 0.10,
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/NBU_new_logo.jpg/500px-NBU_new_logo.jpg',
+    link: 'https://en.wikipedia.org/wiki/National_Bank_of_Uzbekistan'
   },
 ];
 
@@ -41,79 +45,88 @@ export default function StockTickers() {
   const [activeTab, setActiveTab] = useState<'stocks' | 'crypto'>('stocks');
 
   return (
-    <section className="py-6 px-4" style={{ minHeight: 'calc(50vh - 32px)' }}>
+    <section className="py-4 px-4" style={{ minHeight: 'calc(50vh - 32px)' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Табы */}
-        <div className="flex justify-center gap-8 mb-6">
-          <button
-            onClick={() => setActiveTab('stocks')}
-            className={`text-lg font-semibold pb-2 border-b-2 transition-colors ${
-              activeTab === 'stocks'
-                ? 'text-white border-[#1EB53A]'
-                : 'text-white/60 border-transparent hover:text-white/80'
-            }`}
-          >
-            Акции
-          </button>
-          <button
-            onClick={() => setActiveTab('crypto')}
-            className={`text-lg font-semibold pb-2 border-b-2 transition-colors ${
-              activeTab === 'crypto'
-                ? 'text-white border-[#1EB53A]'
-                : 'text-white/60 border-transparent hover:text-white/80'
-            }`}
-          >
-            Крипто
-          </button>
-        </div>
-
-        {/* Тикеры акций */}
-        {activeTab === 'stocks' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {stocks.map((stock) => (
-              <div
-                key={stock.id}
-                className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 hover:bg-white/10 transition-all cursor-pointer"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#0099D8] to-[#1EB53A] rounded-full flex items-center justify-center text-2xl">
-                      {stock.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold text-lg">
-                        {stock.name}
-                      </h3>
-                      <p className="text-white/60 text-sm">{stock.symbol}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-white font-semibold text-lg">
-                      {stock.price} <span className="text-sm text-white/60">UZS</span>
-                    </p>
-                    <p
-                      className={`text-sm font-medium ${
-                        stock.change >= 0 ? 'text-[#1EB53A]' : 'text-[#CE1126]'
-                      }`}
-                    >
-                      {stock.change >= 0 ? '+' : ''}
-                      {stock.change}%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* Белый контейнер */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden">
+          {/* Табы */}
+          <div className="flex justify-center gap-12 pt-5 px-8 border-b border-gray-200">
+            <button
+              onClick={() => setActiveTab('stocks')}
+              className={`text-base font-semibold pb-3 border-b-3 transition-colors ${
+                activeTab === 'stocks'
+                  ? 'text-gray-900 border-b-2 border-[#1EB53A]'
+                  : 'text-gray-400 border-transparent hover:text-gray-600'
+              }`}
+            >
+              Акции
+            </button>
+            <button
+              onClick={() => setActiveTab('crypto')}
+              className={`text-base font-semibold pb-3 border-b-3 transition-colors ${
+                activeTab === 'crypto'
+                  ? 'text-gray-900 border-b-2 border-[#1EB53A]'
+                  : 'text-gray-400 border-transparent hover:text-gray-600'
+              }`}
+            >
+              Крипто
+            </button>
           </div>
-        )}
 
-        {/* Ссылка на все активы */}
-        <div className="text-center mt-8">
-          <a
-            href="#"
-            className="text-white/60 hover:text-white transition-colors underline"
-          >
-            Все 200+ активов&gt;
-          </a>
+          {/* Тикеры акций */}
+          {activeTab === 'stocks' && (
+            <div className="pt-5 pb-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 px-4">
+                {stocks.map((stock) => (
+                  <a
+                    key={stock.id}
+                    href={stock.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
+                        <img src={stock.icon} alt={stock.name} className="w-5 h-5 object-contain" />
+                      </div>
+                      <div>
+                        <h3 className="text-gray-900 font-semibold text-xs leading-tight">
+                          {stock.name}
+                        </h3>
+                        <p className="text-gray-500 text-[10px]">{stock.symbol}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-gray-900 font-semibold text-xs">{stock.price}</p>
+                      <p className="text-[9px] text-gray-500 font-medium">UZS</p>
+                      <p className={`text-[10px] font-semibold ${
+                        stock.change >= 0 ? 'text-[#1EB53A]' : 'text-[#CE1126]'
+                      }`}>
+                        {stock.change >= 0 ? '+' : ''}{stock.change}%
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Кнопка все активы */}
+              <div className="mt-5">
+                <a
+                  href="#"
+                  className="block w-full py-1.5 text-center bg-gradient-to-r from-[#0099D8] to-[#1EB53A] text-white font-semibold text-sm  hover:shadow-lg transition-all"
+                >
+                  Все 200+ активов →
+                </a>
+              </div>
+            </div>
+          )}
+
+          {/* Крипто (заглушка) */}
+          {activeTab === 'crypto' && (
+            <div className="p-12 text-center text-gray-400">
+              <p>Раздел криптовалют в разработке</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

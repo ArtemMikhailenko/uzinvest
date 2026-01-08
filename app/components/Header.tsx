@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Header() {
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Устанавливаем начальное значение только на клиенте
@@ -34,7 +35,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full">
+    <header className="w-full relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Логотип */}
@@ -49,7 +50,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Навигация */}
+          {/* Навигация - десктоп */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="/" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               Главная
@@ -66,24 +67,97 @@ export default function Header() {
             <a href="/team" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               Сотрудники
             </a>
-            <a href="/faq" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
+            <a href="#faq" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               FAQ
             </a>
           </nav>
 
-          {/* Курс валют и кнопка */}
+          {/* Правая часть */}
           <div className="flex items-center gap-4">
+            {/* Курс валют */}
             <div className="hidden sm:flex items-center gap-2 text-white">
               <span className="text-sm font-medium">UZS/USD:</span>
               <span className="text-[#1EB53A] font-semibold">
                 {exchangeRate ? exchangeRate.toLocaleString('ru-RU') : '...'}
               </span>
             </div>
-            {/* <button className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all">
-              Выход
-            </button> */}
+
+            {/* Бургер меню - мобильные */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-white p-2"
+              aria-label="Меню"
+            >
+              {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
+
+        {/* Мобильное меню */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-[#1A3A5C]/95 backdrop-blur-lg border-t border-white/10 shadow-2xl z-50">
+            <nav className="flex flex-col p-4 space-y-3">
+              <a 
+                href="/" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+              >
+                Главная
+              </a>
+              <a 
+                href="/about" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+              >
+                О нас
+              </a>
+              <a 
+                href="/projects" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+              >
+                Проекты
+              </a>
+              <a 
+                href="/licenses" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+              >
+                Лицензии
+              </a>
+              <a 
+                href="/team" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+              >
+                Сотрудники
+              </a>
+              <a 
+                href="#faq" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+              >
+                FAQ
+              </a>
+              
+              {/* Курс валют в мобильном меню */}
+              <div className="flex items-center gap-2 text-white py-2 px-4 border-t border-white/10 mt-2 pt-4">
+                <span className="text-sm font-medium">UZS/USD:</span>
+                <span className="text-[#1EB53A] font-semibold">
+                  {exchangeRate ? exchangeRate.toLocaleString('ru-RU') : '...'}
+                </span>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

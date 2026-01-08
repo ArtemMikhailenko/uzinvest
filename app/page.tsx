@@ -19,7 +19,7 @@ export default function Home() {
       <div 
         className="fixed inset-0 -z-10"
         style={{
-          backgroundImage: 'url(/images/bg.jpg)',
+          backgroundImage: 'url(/images/bg.JPG)',
           backgroundSize: 'cover',
           backgroundPosition: 'top left',
           backgroundRepeat: 'no-repeat',

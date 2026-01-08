@@ -11,7 +11,7 @@ export default function Projects() {
       profit: '+12.4%',
       profitChange: '+2.8% за месяц',
       isProfitable: true,
-      image: '/images/projects/1.jpg',
+      image: '/images/projects/1.JPG',
       imageAlt: 'Карьер НГМК с тяжелой техникой'
     },
     {
@@ -23,7 +23,7 @@ export default function Projects() {
       profit: '+8.7%',
       profitChange: '+1.2% за месяц',
       isProfitable: true,
-      image: '/images/projects/2.jpg',
+      image: '/images/projects/2.JPG',
       imageAlt: 'Металлургический завод АГМК'
     },
     {
@@ -35,7 +35,7 @@ export default function Projects() {
       profit: '+15.2%',
       profitChange: '+3.4% за месяц',
       isProfitable: true,
-      image: '/images/projects/3.jpg',
+      image: '/images/projects/3.JPG',
       imageAlt: 'Здание Национального банка Узбекистана'
     },
     {
@@ -47,7 +47,7 @@ export default function Projects() {
       profit: '+9.3%',
       profitChange: '+1.8% за месяц',
       isProfitable: true,
-      image: '/images/projects/4.jpg',
+      image: '/images/projects/4.JPG',
       imageAlt: 'Нефтяные качалки на закате'
     }
   ];

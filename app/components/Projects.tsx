@@ -1,6 +1,9 @@
 'use client';
 
+import { useAddToHomeScreen } from '../hooks/useAddToHomeScreen';
+
 export default function Projects() {
+  const { promptInstall } = useAddToHomeScreen();
   const projects = [
     {
       id: 1,
@@ -8,8 +11,8 @@ export default function Projects() {
       categoryColor: 'bg-yellow-500',
       title: 'Навоийский горно-металлургический комбинат (НГМК)',
       description: 'Один из крупнейших горно-металлургических комплексов Центральной Азии и стратегическое предприятие по добыче и переработке золота.',
-      profit: '+12.4%',
-      profitChange: '+2.8% за месяц',
+      profit: '+24.8%',
+      profitChange: '+5.6% за месяц',
       isProfitable: true,
       image: '/images/projects/1.JPG',
       imageAlt: 'Карьер НГМК с тяжелой техникой'
@@ -20,8 +23,8 @@ export default function Projects() {
       categoryColor: 'bg-red-500',
       title: 'Алмалыкский горно-металлургический комбинат (АГМК)',
       description: 'Ведущий производитель меди и редких металлов в Узбекистане, специализирующийся на добыче, обогащении и переработке медной руды.',
-      profit: '+8.7%',
-      profitChange: '+1.2% за месяц',
+      profit: '+17.4%',
+      profitChange: '+2.4% за месяц',
       isProfitable: true,
       image: '/images/projects/2.JPG',
       imageAlt: 'Металлургический завод АГМК'
@@ -32,8 +35,8 @@ export default function Projects() {
       categoryColor: 'bg-cyan-500',
       title: 'Национальный банк Узбекистана',
       description: 'Крупнейший финансовый институт страны, поддерживающий экономическое развитие Узбекистана и стабильность национальной валюты.',
-      profit: '+15.2%',
-      profitChange: '+3.4% за месяц',
+      profit: '+30.4%',
+      profitChange: '+6.8% за месяц',
       isProfitable: true,
       image: '/images/projects/3.JPG',
       imageAlt: 'Здание Национального банка Узбекистана'
@@ -44,8 +47,8 @@ export default function Projects() {
       categoryColor: 'bg-green-600',
       title: '«Узбекнефтегаз»',
       description: 'Ведущая нефтегазовая компания, занимающаяся разведкой, добычей и переработкой углеводородного сырья в Узбекистане.',
-      profit: '+9.3%',
-      profitChange: '+1.8% за месяц',
+      profit: '+18.6%',
+      profitChange: '+3.6% за месяц',
       isProfitable: true,
       image: '/images/projects/4.JPG',
       imageAlt: 'Нефтяные качалки на закате'
@@ -103,23 +106,26 @@ export default function Projects() {
                   </p>
 
                   {/* Прибыльность - только на десктопе */}
-                  <div className="hidden md:flex flex-wrap items-center gap-4 mb-6">
+                  <div className="flex md:flex flex-wrap items-center gap-4 mb-6">
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-2.5 border border-white/20">
                       <p className="text-xs text-white/70 mb-0.5">Доходность</p>
-                      <p className={`text-xl font-bold ${project.isProfitable ? 'text-[#1EB53A]' : 'text-[#CE1126]'}`}>
+                      <p className="text-xl font-bold text-white">
                         {project.profit}
                       </p>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-2.5 border border-white/20">
                       <p className="text-xs text-white/70 mb-0.5">Изменение</p>
-                      <p className={`text-base font-semibold ${project.isProfitable ? 'text-[#1EB53A]' : 'text-[#CE1126]'}`}>
+                      <p className="text-base font-semibold text-white">
                         {project.profitChange}
                       </p>
                     </div>
                   </div>
 
                   {/* Кнопка */}
-                  <button className="w-full md:w-auto px-6 py-2.5 md:px-8 md:py-3 bg-yellow-400 text-black text-sm md:text-base font-bold rounded-xl hover:bg-yellow-300 active:bg-yellow-300 transform hover:scale-105 active:scale-105 transition-all shadow-xl hover:shadow-2xl inline-flex items-center justify-center gap-2">
+                  <button 
+                    onClick={promptInstall}
+                    className="w-full md:w-auto px-6 py-2.5 md:px-8 md:py-3 bg-yellow-400 text-black text-sm md:text-base font-bold rounded-xl hover:bg-yellow-300 active:bg-yellow-300 transform hover:scale-105 active:scale-105 transition-all shadow-xl hover:shadow-2xl inline-flex items-center justify-center gap-2"
+                  >
                     Начать
                   </button>
                 </div>

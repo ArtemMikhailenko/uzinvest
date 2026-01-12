@@ -6,7 +6,7 @@ import FAQ from '../components/FAQ';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative pt-22">
       {/* Общий фон */}
       <div 
         className="fixed inset-0 -z-10"

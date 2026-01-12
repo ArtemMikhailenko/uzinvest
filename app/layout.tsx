@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   authors: [{ name: "UzInvest" }],
   creator: "UzInvest",
   publisher: "UzInvest",
+  manifest: '/manifest.json',
   formatDetection: {
     email: false,
     address: false,
@@ -86,6 +87,7 @@ export default function RootLayout({
     <html lang="ru">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: '#0f50a8' }}
       >
         {children}
       </body>

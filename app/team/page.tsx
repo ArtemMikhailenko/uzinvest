@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative pt-22">
       {/* Общий фон */}
       <div 
         className="fixed inset-0 -z-10"

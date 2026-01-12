@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const stocks = [
+const initialStocks = [
   {
     id: 1,
     name: 'Uzbekneftegaz',
@@ -43,9 +43,23 @@ const stocks = [
 
 export default function StockTickers() {
   const [activeTab, setActiveTab] = useState<'stocks' | 'crypto'>('stocks');
+  const [stocks, setStocks] = useState(initialStocks);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStocks(prevStocks => 
+        prevStocks.map(stock => ({
+          ...stock,
+          change: Number((stock.change + (Math.random() - 0.5) * 0.02).toFixed(2))
+        }))
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="py-4 px-4" style={{ minHeight: 'calc(50vh - 32px)' }}>
+    <section className="py-4 px-4" style={{ minHeight: 'calc(55vh - 32px)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Белый контейнер */}
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden">
@@ -80,7 +94,7 @@ export default function StockTickers() {
           {/* Тикеры акций */}
           {activeTab === 'stocks' && (
             <div className="pt-5 pb-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
                 {stocks.map((stock) => (
                   <a
                     key={stock.id}
@@ -90,8 +104,8 @@ export default function StockTickers() {
                     className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
-                        <img src={stock.icon} alt={stock.name} className="w-5 h-5 object-contain" />
+                      <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
+                        <img src={stock.icon} alt={stock.name} className="w-11 h-11 object-contain" />
                       </div>
                       <div>
                         <h3 className="text-gray-900 font-semibold text-xs leading-tight">
@@ -117,7 +131,7 @@ export default function StockTickers() {
               <div className="mt-5">
                 <a
                   href="#"
-                  className="block w-full py-1.5 text-center bg-gradient-to-r from-[#0099D8] to-[#1EB53A] text-white font-semibold text-sm  hover:shadow-lg transition-all"
+                  className="block w-full py-1.5 text-center bg-gradient-to-r from-[#0099D8] to-[#1EB53A] md:bg-white text-white md:text-gray-900 font-semibold text-sm hover:shadow-lg transition-all"
                 >
                   Все 200+ активов →
                 </a>

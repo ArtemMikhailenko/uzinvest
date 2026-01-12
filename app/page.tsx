@@ -14,10 +14,10 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative pt-16">
+    <div className="min-h-screen relative pt-22">
       {/* Общий фон флага Узбекистана для всей страницы */}
       <div 
-        className="fixed inset-0 -z-10"
+        className="fixed inset-0 -z-10 pt-22 mt-16"
         style={{
           backgroundImage: 'url(/images/bg.JPG)',
           backgroundSize: 'cover',
@@ -44,7 +44,7 @@ export default function Home() {
       <Hero />
       <StockTickers />
       <News />
-      <FAQ />
+      {/* <FAQ /> */}
       <Footer />
     </div>
   );

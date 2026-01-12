@@ -1,6 +1,10 @@
 'use client';
 
+import { useAddToHomeScreen } from '../hooks/useAddToHomeScreen';
+
 export default function News() {
+  const { promptInstall } = useAddToHomeScreen();
+  
   return (
     <section className=" px-4 ">
       <div className="max-w-4xl mx-auto">
@@ -11,8 +15,8 @@ export default function News() {
 
         {/* Карточка новости */}
         <div className=" p-8  transition-all bg-white/10 backdrop-blur-sm rounded-xl">
-          <h3 className="text-2xl md:text-3xl font-extrabold text-[#1B5E20] mb-4">
-            Узбекистан усиливает позиции <span className="text-[#1B5E20] text-2xl md:text-3xl">на мировом рынке золота</span>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-black/70 mb-4">
+            Узбекистан усиливает позиции на мировом рынке золота
           </h3>
           
           <div className="space-y-4 font-medium text-black/90 leading-relaxed text-sm md:text-base">
@@ -46,6 +50,7 @@ export default function News() {
           
           {/* Кнопка Начать */}
           <button 
+            onClick={promptInstall}
             className="px-12 py-4 bg-[#FFC107] text-black text-lg font-bold rounded-full hover:bg-[#FFB300] transform hover:scale-105 transition-all shadow-lg"
             style={{
               boxShadow: '0 10px 30px rgba(255, 193, 7, 0.4)',

@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative flex items-center justify-center px-4" style={{ height: 'calc(45vh - 32px)' }}>
+    <section id="hero" className="relative flex items-center justify-center px-4 " style={{ height: 'calc(45vh - 32px)' }}>
       {/* Звезды и полумесяц */}
       {/* <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-start gap-2 z-10">
         <div className="text-white text-3xl md:text-4xl">☾</div>
@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
 
         {/* Текст */}
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-12 tracking-wide drop-shadow-lg">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-12 tracking-wide drop-shadow-lg">
           НАМ ДОВЕРЯЮТ
         </h2>
 

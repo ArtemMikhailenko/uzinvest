@@ -7,7 +7,7 @@ export default function AboutUs() {
         {/* Верхний блок с заголовком, текстом и фото */}
         <div className="relative grid grid-cols-3 lg:grid-cols-5 gap-2 md:gap-6 lg:gap-16 mb-8 md:mb-16 lg:items-start overflow-visible">
           {/* Левая колонка - текст */}
-          <div className="col-span-2 lg:col-span-3   rounded-xl md:rounded-2xl p-4 md:p-6 mb-0 md:mb-0">
+          <div className="col-span-2 lg:col-span-3 bg-white/10 backdrop-blur-sm rounded-xl  rounded-xl md:rounded-2xl p-4 md:p-6 mb-0 md:mb-0">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1A3A5C] mb-4 md:mb-6">
               О компании<br />
               UzInvest
@@ -32,7 +32,7 @@ export default function AboutUs() {
         </div>
 
         {/* Подход и философия */}
-        <div className="mb-8 md:mb-12   rounded-xl md:rounded-2xl p-4 md:p-6">
+        <div className="mb-8 md:mb-12  bg-white/10 backdrop-blur-sm rounded-xl rounded-xl md:rounded-2xl p-4 md:p-6">
           <h3 className="text-xl md:text-3xl font-bold text-[#1A3A5C] mb-3 md:mb-4">
             Подход и философия
           </h3>
@@ -45,7 +45,7 @@ export default function AboutUs() {
         </div>
 
         {/* История и ценности UzInvest */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 bg-white/10 backdrop-blur-sm rounded-xl lg:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
           {/* Левая колонка - текст */}
           <div className=" md:rounded-2xl p-4 md:p-6">
             <h3 className="text-xl md:text-3xl font-bold text-[#1A3A5C] mb-3 md:mb-4">
@@ -76,7 +76,7 @@ export default function AboutUs() {
         </div>
 
         {/* Инвестиционные возможности */}
-        <div className="mb-8 md:mb-12  rounded-xl md:rounded-2xl p-4 md:p-6">
+        <div className="mb-8 md:mb-12 bg-white/10 backdrop-blur-sm rounded-xl rounded-xl md:rounded-2xl p-4 md:p-6">
           <h3 className="text-xl md:text-3xl font-bold text-[#1A3A5C] mb-3 md:mb-4">
             Инвестиционные возможности
           </h3>
@@ -87,9 +87,9 @@ export default function AboutUs() {
         </div>
 
         {/* Блок с маркированным списком */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
+        <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
           {/* Левая колонка - заключительный текст */}
-          <div className=" md:rounded-2xl p-4 md:p-6">
+          <div className=" md:rounded-2xl bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6">
             <h3 className="text-2xl md:text-4xl font-bold text-[#1A3A5C] mb-3 md:mb-4">
               UzInvest
             </h3>

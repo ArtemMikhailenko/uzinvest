@@ -50,27 +50,31 @@ export default function StockTickers() {
         {/* Белый контейнер */}
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden">
           {/* Табы */}
-          <div className="flex justify-center gap-12 pt-5 px-8 border-b border-gray-200">
-            <button
-              onClick={() => setActiveTab('stocks')}
-              className={`text-base font-semibold pb-3 border-b-3 transition-colors ${
-                activeTab === 'stocks'
-                  ? 'text-gray-900 border-b-2 border-[#1EB53A]'
-                  : 'text-gray-400 border-transparent hover:text-gray-600'
-              }`}
-            >
-              Акции
-            </button>
-            <button
-              onClick={() => setActiveTab('crypto')}
-              className={`text-base font-semibold pb-3 border-b-3 transition-colors ${
-                activeTab === 'crypto'
-                  ? 'text-gray-900 border-b-2 border-[#1EB53A]'
-                  : 'text-gray-400 border-transparent hover:text-gray-600'
-              }`}
-            >
-              Крипто
-            </button>
+          <div className="grid grid-cols-2 pt-5 px-8 border-b border-gray-200">
+            <div className="flex justify-center">
+              <button
+                onClick={() => setActiveTab('stocks')}
+                className={`text-base font-semibold pb-3 border-b-3 transition-colors ${
+                  activeTab === 'stocks'
+                    ? 'text-gray-900 border-b-2 border-[#1EB53A]'
+                    : 'text-gray-400 border-transparent hover:text-gray-600'
+                }`}
+              >
+                Акции
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button
+                onClick={() => setActiveTab('crypto')}
+                className={`text-base font-semibold pb-3 border-b-3 transition-colors ${
+                  activeTab === 'crypto'
+                    ? 'text-gray-900 border-b-2 border-[#1EB53A]'
+                    : 'text-gray-400 border-transparent hover:text-gray-600'
+                }`}
+              >
+                Крипто
+              </button>
+            </div>
           </div>
 
           {/* Тикеры акций */}

@@ -2,17 +2,16 @@
 
 export default function Footer() {
   return (
-    <footer className="relative py-8 px-4 border-t border-white/10">
+    <footer className="relative py-8 px-4 border-t border-white/10 bg-white/10 backdrop-blur-md">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Логотип и название */}
           <div className="flex items-center gap-2">
-            {/* <div className="w-8 h-8 bg-gradient-to-br from-[#0099D8] to-[#1EB53A] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">U</span>
-            </div>
-            <span className="text-white font-semibold text-lg">
-              uz<span className="text-[#1EB53A]">i</span>nvest
-            </span> */}
+            <img 
+              src="/images/logo.png" 
+              alt="UzInvest Logo" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Копирайт */}

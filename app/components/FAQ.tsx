@@ -121,15 +121,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Копирайт */}
-        <div className="text-center mt-8 md:mt-12">
-          <p className="text-[#1A3A5C] font-semibold text-base md:text-lg mb-1">
-            © UzInvest, 2026
-          </p>
-          <p className="text-[#1A3A5C]/70 text-sm md:text-base">
-            Все права защищены
-          </p>
-        </div>
+        
       </div>
     </section>
   );

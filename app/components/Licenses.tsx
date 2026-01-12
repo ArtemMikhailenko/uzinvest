@@ -78,7 +78,7 @@ export default function Licenses() {
               </button>
 
               {/* Заголовок */}
-              <h3 className="text-xs md:text-base font-bold text-white leading-tight">
+              <h3 className="text-xs md:text-base font-bold text-black/80 leading-tight">
                 {doc.title}
               </h3>
             </div>

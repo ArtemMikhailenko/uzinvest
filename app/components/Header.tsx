@@ -64,9 +64,9 @@ export default function Header() {
             <a href="/team" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               Сотрудники
             </a>
-            <a href="/partners" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
+            {/* <a href="/partners" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               Партнеры
-            </a>
+            </a> */}
             {/* <a href="/faq" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               FAQ
             </a> */}

@@ -64,6 +64,9 @@ export default function Header() {
             <a href="/team" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               Сотрудники
             </a>
+            <a href="/partners" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
+              Партнеры
+            </a>
             {/* <a href="/faq" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               FAQ
             </a> */}
@@ -137,6 +140,13 @@ export default function Header() {
               className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
             >
               Сотрудники
+            </a>
+            <a 
+              href="/partners" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
+            >
+              Партнеры
             </a>
             <a 
               href="#faq" 

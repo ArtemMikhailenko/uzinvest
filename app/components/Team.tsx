@@ -4,39 +4,39 @@ export default function Team() {
   const team = [
     {
       id: 1,
-      name: 'Омарбеков Куаныш Алтынбекович',
-      position: 'Главный директор по производству',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=faces'
+      name: 'Виктория Алексеева',
+      position: 'Главный менеджер по привлечению клиентов',
+      image: '/images/team/viktoria.jpg'
     },
     {
       id: 2,
-      name: 'Юсупов Менржан Бахитович',
-      position: 'Председатель правления',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=faces'
+      name: 'Максим Каримов',
+      position: 'Главный специалист по привлечению клиентов',
+      image: '/images/team/karimov.jpg'
     },
     {
       id: 3,
-      name: 'Кошербаев Дастан Ермекович',
-      position: 'Главный директор по стратегии и международному развитию',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces'
+      name: 'Олег Старков',
+      position: 'Руководитель отдела по цифровой трансформации и управлению проектами',
+      image: '/images/team/starkov.jpg'
     },
     {
       id: 4,
-      name: 'Сагиндыков Даржан Танатович',
-      position: 'Главный директор по закупкам и общим вопросам',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces'
+      name: 'Дониёр Ахмедов',
+      position: 'Начальник отдела по брокерскому обслуживанию клиентов',
+      image: '/images/team/donier.jpg'
     },
     {
       id: 5,
-      name: 'Байгужин Владислав Ерханович',
-      position: 'Главный директор по коммерции, член правления',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces'
+      name: 'Фахриддин Нарзыкулов',
+      position: 'Руководитель отдела продаж',
+      image: '/images/team/fahridin.jpg'
     },
     {
       id: 6,
-      name: 'Хасенов Аскат Галимович',
-      position: 'Член правления',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces'
+      name: 'Каримов Зафар',
+      position: 'Генеральный директор',
+      image: '/images/team/zafar.jpg'
     }
   ];
 
@@ -60,7 +60,7 @@ export default function Team() {
               {/* Фото */}
               <div className="overflow-hidden">
                 <div 
-                  className="w-full h-32 md:h-64 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-32 md:h-64 bg-cover bg-top transition-transform duration-500 group-hover:scale-110"
                   style={{
                     backgroundImage: `url(${member.image})`,
                   }}

@@ -4,53 +4,39 @@ export default function Licenses() {
   const documents = [
     {
       id: 1,
-      title: 'Учредительные документы UzInvest',
-      description: 'Свидетельство о регистрации, устав компании, учредительный договор',
-      icon: '📋'
+      title: 'Регламент услуг инвестпосредника',
+      file: '/docs/reglament.pdf'
     },
     {
       id: 2,
-      title: 'Коммерческая лицензия UzInvest',
-      description: 'Лицензия на осуществление инвестиционной деятельности',
-      icon: '🏛️'
+      title: 'Лицензия инвестиционного посредника',
+      file: '/docs/Posrednik.jpg'
     },
     {
       id: 3,
-      title: 'Политика конфиденциальности и обработки данных',
-      description: 'Обработка, хранение и защита персональных данных пользователей',
-      icon: '🔒'
+      title: 'Лицензия доверительного управляющего',
+      file: '/docs/Upravlya.jpg'
     },
     {
       id: 4,
-      title: 'Пользовательское соглашение',
-      description: 'Правила использования платформы, права и обязанности сторон',
-      icon: '📜'
+      title: 'Лицензия инвестиционного консультанта',
+      file: '/docs/Consultant.jpg'
     },
     {
       id: 5,
-      title: 'Политика AML / KYC',
-      description: 'Противодействие отмыванию средств и идентификация пользователей',
-      icon: '🛡️'
+      title: 'Свидетельство о госрегистрации юрлица',
+      file: '/docs/YurLico.jpg'
     },
     {
       id: 6,
-      title: 'Свидетельство о регистрации инвестиционного консультанта',
-      description: 'Регистрация в качестве инвестиционного консультанта',
-      icon: '📊'
-    },
-    {
-      id: 7,
-      title: 'Свидетельство о налоговой регистрации',
-      description: 'Налоговая регистрация компании в Республике Узбекистан',
-      icon: '💼'
-    },
-    {
-      id: 8,
-      title: 'Соответствие международным стандартам',
-      description: 'Сертификаты соответствия международным финансовым стандартам',
-      icon: '🌐'
+      title: 'Свидетельство плательщика НДС',
+      file: '/docs/NDS.jpg'
     }
   ];
+
+  const handleOpen = (file: string) => {
+    window.open(file, '_blank');
+  };
 
   return (
     <section id="licenses" className="relative py-24 px-4">
@@ -66,14 +52,17 @@ export default function Licenses() {
         </div>
 
         {/* Сетка документов */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
           {documents.map((doc) => (
             <div 
               key={doc.id}
               className="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl border border-white/20 hover:shadow-2xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center min-h-[140px] md:min-h-[160px]"
             >
               {/* Кнопка Открыть */}
-              <button className="mb-3 md:mb-4 px-4 md:px-6 py-1.5 md:py-2 bg-[#1EB53A] text-white text-xs md:text-sm font-semibold rounded-full hover:bg-[#17A130] transition-colors shadow-lg">
+              <button 
+                onClick={() => handleOpen(doc.file)}
+                className="mb-3 md:mb-4 px-4 md:px-6 py-1.5 md:py-2 bg-[#1EB53A] text-white text-xs md:text-sm font-semibold rounded-full hover:bg-[#17A130] transition-colors shadow-lg"
+              >
                 Открыть
               </button>
 

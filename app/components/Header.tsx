@@ -148,13 +148,13 @@ export default function Header() {
             >
               Партнеры
             </a> */}
-            <a 
+            {/* <a 
               href="#faq" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
             >
               FAQ
-            </a>
+            </a> */}
           </nav>
         </div>
       </div>

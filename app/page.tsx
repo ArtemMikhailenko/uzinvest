@@ -44,7 +44,7 @@ export default function Home() {
       <Hero />
       <StockTickers />
       <News />
-      {/* <FAQ /> */}
+      <FAQ />
       <Footer />
     </div>
   );

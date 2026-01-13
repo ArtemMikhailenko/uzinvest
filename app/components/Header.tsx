@@ -8,7 +8,7 @@ export default function Header() {
 
   useEffect(() => {
     // Устанавливаем начальное значение только на клиенте
-    setExchangeRate(12850);
+    setExchangeRate(13300);
 
     // Получение реального курса валют
     const fetchExchangeRate = async () => {
@@ -23,7 +23,7 @@ export default function Header() {
       } catch (error) {
         console.error('Ошибка получения курса валют:', error);
         // Если API недоступен, используем примерный курс
-        setExchangeRate(12850);
+        setExchangeRate(13300);
       }
     };
 
@@ -64,9 +64,9 @@ export default function Header() {
             <a href="/team" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               Сотрудники
             </a>
-            <a href="/faq" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
+            {/* <a href="/faq" className="text-white hover:text-[#1EB53A] transition-colors font-medium">
               FAQ
-            </a>
+            </a> */}
           </nav>
 
           {/* Правая часть */}
@@ -75,7 +75,7 @@ export default function Header() {
             <div className="flex items-center gap-1 md:gap-2 bg-gradient-to-r from-[#1A3A5C] to-[#2B4A6F] px-3 py-2 md:px-4 md:py-2 rounded-lg border border-[#1EB53A]/30">
               <span className="text-sm md:text-sm font-semibold text-white/90">UZS/USD:</span>
               <span className="text-[#FFC107] font-extrabold text-base md:text-base">
-                {exchangeRate ? exchangeRate.toLocaleString('ru-RU') : '...'}
+                13300
               </span>
             </div>
 

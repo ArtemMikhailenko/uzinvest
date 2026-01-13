@@ -104,8 +104,8 @@ export default function StockTickers() {
                     className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
-                        <img src={stock.icon} alt={stock.name} className="w-11 h-11 object-contain" />
+                      <div className="w-18 h-18 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
+                        <img src={stock.icon} alt={stock.name} className="w-16 h-16 object-contain" />
                       </div>
                       <div>
                         <h3 className="text-gray-900 font-semibold text-xs leading-tight">
@@ -130,7 +130,7 @@ export default function StockTickers() {
               {/* Кнопка все активы */}
               <div className="mt-5">
                 <a
-                  href="#"
+                  href="https://ru.tradingview.com/markets/currencies/rates-asia/"
                   className="block w-full py-1.5 text-center bg-gradient-to-r from-[#0099D8] to-[#1EB53A] md:bg-white text-white md:text-gray-900 font-semibold text-sm hover:shadow-lg transition-all"
                 >
                   Все 200+ активов →

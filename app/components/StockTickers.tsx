@@ -10,7 +10,8 @@ const initialStocks = [
     price: '1 305.83',
     change: -0.01,
     icon: 'https://www.ung.uz/images/main-logo.svg',
-    link: 'https://www.ung.uz/'
+    link: 'https://www.ung.uz/',
+    scale: 'scale-120'
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const initialStocks = [
     price: '1 072.26',
     change: -0.05,
     icon: 'https://utg.uz/local/templates/utg/media/img/logo.svg',
-    link: 'https://utg.uz/en/'
+    link: 'https://utg.uz/en/',
+    scale: ''
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const initialStocks = [
     price: '578.60',
     change: 0.14,
     icon: 'https://www.uzbekembassy.in/wp-content/uploads/2017/12/unnamed.jpg',
-    link: 'https://www.uzbekembassy.in/uzbekenergo-international-cooperation-is-expanding/'
+    link: 'https://www.uzbekembassy.in/uzbekenergo-international-cooperation-is-expanding/',
+    scale: 'scale-150'
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ const initialStocks = [
     price: '234.12',
     change: 0.10,
     icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/NBU_new_logo.jpg/500px-NBU_new_logo.jpg',
-    link: 'https://en.wikipedia.org/wiki/National_Bank_of_Uzbekistan'
+    link: 'https://en.wikipedia.org/wiki/National_Bank_of_Uzbekistan',
+    scale: ''
   },
 ];
 
@@ -104,8 +108,8 @@ export default function StockTickers() {
                     className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-18 h-18 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
-                        <img src={stock.icon} alt={stock.name} className="w-16 h-16 object-contain" />
+                      <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden border border-gray-200">
+                        <img src={stock.icon} alt={stock.name} className={`w-18 h-18 object-contain ${stock.scale}`} />
                       </div>
                       <div>
                         <h3 className="text-gray-900 font-semibold text-xs leading-tight">

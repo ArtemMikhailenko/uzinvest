@@ -141,13 +141,13 @@ export default function Header() {
             >
               Сотрудники
             </a>
-            <a 
+            {/* <a 
               href="/partners" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-white hover:text-[#1EB53A] transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/10"
             >
               Партнеры
-            </a>
+            </a> */}
             <a 
               href="#faq" 
               onClick={() => setIsMobileMenuOpen(false)}

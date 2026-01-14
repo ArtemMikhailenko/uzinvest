@@ -38,7 +38,7 @@ export default function Hero() {
   }, [count]);
 
   return (
-    <section id="hero" className="relative flex items-center justify-center px-4 pt-8 md:pt-16" style={{ height: 'calc(45vh - 32px)' }}>
+    <section id="hero" className="relative w-full flex items-center justify-center" style={{ height: 'calc(45vh - 32px)' }}>
       {/* Звезды и полумесяц */}
       {/* <div className="absolute top-4 left-4 md:top-8 md:left-8 flex items-start gap-2 z-10">
         <div className="text-white text-3xl md:text-4xl">☾</div>
@@ -57,7 +57,7 @@ export default function Hero() {
         </svg>
       </div> */}
 
-      <div className="max-w-7xl mx-auto text-center relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 text-center relative z-10">
         {/* Главное число */}
         <div className="mb-6">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white drop-shadow-2xl transition-all duration-300">
@@ -71,15 +71,17 @@ export default function Hero() {
         </h2>
 
         {/* Кнопка CTA */}
-        <button 
-          onClick={promptInstall}
-          className="px-12 py-4 bg-[#FFC107] text-black text-lg font-bold rounded-full hover:bg-[#FFB300] transform hover:scale-105 transition-all"
-          style={{
-            boxShadow: '0 10px 40px rgba(255, 193, 7, 0.5), 0 6px 20px rgba(255, 193, 7, 0.3)',
-          }}
-        >
-          Начать
-        </button>
+        <div className="flex justify-center">
+          <button 
+            onClick={promptInstall}
+            className="px-12 py-4 bg-[#FFC107] text-black text-lg font-bold rounded-full hover:bg-[#FFB300] transform hover:scale-105 transition-all whitespace-nowrap"
+            style={{
+              boxShadow: '0 10px 40px rgba(255, 193, 7, 0.5), 0 6px 20px rgba(255, 193, 7, 0.3)',
+            }}
+          >
+            Начать
+          </button>
+        </div>
       </div>
 
       {/* Красные волнистые линии снизу */}

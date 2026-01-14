@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="relative py-8 px-4 border-t border-white/10  mt-12">
+    <footer className="relative py-8 px-4 border-t border-white/10 bg-white/20 backdrop-blur-md  mt-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Логотип и название */}

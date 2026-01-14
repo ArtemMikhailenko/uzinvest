@@ -17,6 +17,8 @@ export default function AboutPage() {
           backgroundRepeat: 'no-repeat',
         }}
       />
+      {/* Высветляющий оверлей */}
+      <div className="fixed inset-0 -z-10 bg-white/10" />
 
       <Header />
       <AboutUs />

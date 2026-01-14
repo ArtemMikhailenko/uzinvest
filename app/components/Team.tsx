@@ -4,39 +4,39 @@ export default function Team() {
   const team = [
     {
       id: 1,
-      name: 'Виктория Алексеева',
-      position: 'Главный менеджер по привлечению клиентов',
-      image: '/images/team/viktoria.jpg'
+      name: 'Каримов Зафар',
+      position: 'Генеральный директор',
+      image: '/images/team/zafar.jpg'
     },
     {
       id: 2,
-      name: 'Максим Каримов',
-      position: 'Главный специалист по привлечению клиентов',
-      image: '/images/team/karimov.jpg'
-    },
-    {
-      id: 3,
-      name: 'Олег Старков',
+      name: 'Старков Олег',
       position: 'Руководитель отдела по цифровой трансформации и управлению проектами',
       image: '/images/team/starkov.jpg'
     },
     {
+      id: 3,
+      name: 'Нарзыкулов Фахриддин',
+      position: 'Руководитель отдела продаж',
+      image: '/images/team/fahridin.jpg'
+    },
+    {
       id: 4,
-      name: 'Дониёр Ахмедов',
+      name: 'Ахмедов Дониёр',
       position: 'Начальник отдела по брокерскому обслуживанию клиентов',
       image: '/images/team/donier.jpg'
     },
     {
       id: 5,
-      name: 'Фахриддин Нарзыкулов',
-      position: 'Руководитель отдела продаж',
-      image: '/images/team/fahridin.jpg'
+      name: 'Каримов Максим',
+      position: 'Главный специалист по привлечению клиентов',
+      image: '/images/team/karimov.jpg'
     },
     {
       id: 6,
-      name: 'Каримов Зафар',
-      position: 'Генеральный директор',
-      image: '/images/team/zafar.jpg'
+      name: 'Алексеева Виктория',
+      position: 'Главный менеджер по привлечению клиентов',
+      image: '/images/team/viktoria.jpg'
     }
   ];
 
